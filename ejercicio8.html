@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8 · Número Neon</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;700;900&display=swap');
+        :root {
+            --bg: #0c0e14;
+            --surface: #131c26;
+            --neon-purple: #b400ff;
+            --neon-blue: #00e0ff;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at 30% 40%, #1a1e2c, #0a0c14);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+        .number-container {
+            background: var(--surface);
+            border: 2px solid var(--neon-purple);
+            box-shadow: 0 0 40px var(--neon-purple), 0 0 80px #b400ff44;
+            border-radius: 64px;
+            padding: 3rem 2.5rem;
+            max-width: 700px;
+            width: 100%;
+            text-align: center;
+            backdrop-filter: blur(12px);
+        }
+        .big-number {
+            font-size: 5.2rem;
+            font-weight: 900;
+            background: linear-gradient(145deg, #fff, #e0b0ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 35px var(--neon-purple);
+            letter-spacing: 8px;
+            line-height: 1.2;
+            word-break: break-word;
+        }
+        .slider-container {
+            margin-top: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        input[type=range] {
+            width: 100%;
+            height: 10px;
+            background: #2a3848;
+            border-radius: 20px;
+            appearance: none;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            appearance: none;
+            width: 28px;
+            height: 28px;
+            background: var(--neon-blue);
+            border-radius: 50%;
+            box-shadow: 0 0 20px var(--neon-blue);
+            border: 2px solid white;
+            cursor: pointer;
+        }
+        .range-value {
+            color: var(--neon-blue);
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-shadow: 0 0 8px var(--neon-blue);
+        }
+        .btn {
+            background: transparent;
+            border: 2px solid var(--neon-purple);
+            color: var(--neon-purple);
+            padding: 1rem 2rem;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn:hover {
+            background: var(--neon-purple);
+            color: black;
+            box-shadow: 0 0 30px var(--neon-purple);
+        }
+    </style>
+</head>
+<body>
+    <div class="number-container">
+        <div class="big-number" id="randomNumber">48123</div>
+        <div class="slider-container">
+            <label style="color:#b0d0ff;">MÁXIMO: <span id="maxValue" class="range-value">100000</span></label>
+            <input type="range" id="maxSlider" min="1000" max="500000" value="100000" step="1000">
+        </div>
+        <button class="btn" id="generateBtn">🌀 GENERAR NUEVO</button>
+    </div>
+    <script>
+        'use strict';
+        const numberEl = document.getElementById('randomNumber');
+        const slider = document.getElementById('maxSlider');
+        const maxSpan = document.getElementById('maxValue');
+
+        function generateRandom(max) {
+            return Math.floor(Math.random() * max);
+        }
+
+        function updateNumber() {
+            const max = parseInt(slider.value, 10);
+            maxSpan.textContent = max;
+            numberEl.textContent = generateRandom(max);
+        }
+
+        slider.addEventListener('input', updateNumber);
+        document.getElementById('generateBtn').addEventListener('click', updateNumber);
+        updateNumber(); // inicial
+    </script>
+</body>
+</html>

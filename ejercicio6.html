@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6 · Laboratorio de Funciones</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;600;700;800&display=swap');
+        :root {
+            --bg: #0d1017;
+            --surface: #16222e;
+            --neon-lime: #b3ff6f;
+            --neon-orange: #ff9900;
+            --neon-purple: #c056ff;
+            --glow-lime: 0 0 15px #b3ff6faa;
+            --glow-orange: 0 0 15px #ff9900aa;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at 70% 20%, #1f2632, #0b0e14);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.8rem;
+        }
+        .func-lab {
+            background: var(--surface);
+            border: 2px solid var(--neon-lime);
+            box-shadow: var(--glow-lime), 0 20px 40px #00000080;
+            border-radius: 56px;
+            padding: 2.5rem;
+            max-width: 750px;
+            width: 100%;
+            backdrop-filter: blur(12px);
+        }
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(145deg, #fff, var(--neon-lime));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 20px var(--neon-lime);
+        }
+        .function-list {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        .fn-btn {
+            background: #1e3040;
+            border: 1px solid var(--neon-purple);
+            color: #e0b0ff;
+            padding: 0.8rem 1.6rem;
+            border-radius: 60px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .fn-btn:hover {
+            background: var(--neon-purple);
+            color: black;
+            box-shadow: 0 0 20px var(--neon-purple);
+        }
+        .console {
+            background: #0e1a24;
+            border-radius: 36px;
+            padding: 1.6rem;
+            border: 1px solid #3e6a8a;
+            min-height: 240px;
+            max-height: 300px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            margin-bottom: 1.8rem;
+        }
+        .log-entry {
+            background: #1d2f3e;
+            padding: 0.7rem 1.4rem;
+            border-radius: 60px;
+            font-size: 0.95rem;
+            color: #e0f0ff;
+            border-left: 8px solid var(--neon-orange);
+            box-shadow: inset 0 0 8px black;
+            animation: slideIn 0.2s;
+        }
+        .log-return {
+            border-left-color: var(--neon-lime);
+            background: #1a3a2a;
+        }
+        .btn-primary {
+            background: transparent;
+            border: 2px solid var(--neon-lime);
+            color: var(--neon-lime);
+            padding: 0.9rem 2rem;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn-primary:hover {
+            background: var(--neon-lime);
+            color: black;
+            box-shadow: var(--glow-lime);
+        }
+        @keyframes slideIn { 0% { opacity:0; transform:translateX(-12px); } 100% { opacity:1; } }
+    </style>
+</head>
+<body>
+    <div class="func-lab">
+        <h1>⚙️ LLAMADAS A FUNCIONES · TEST</h1>
+        <div class="function-list">
+            <div class="fn-btn" data-fn="test">test()</div>
+            <div class="fn-btn" data-fn="test1">test1()</div>
+            <div class="fn-btn" data-fn="suma">suma(5,3)</div>
+            <div class="fn-btn" data-fn="multiplica">multiplica(4,7)</div>
+            <div class="fn-btn" data-fn="saludo">saludo("victor")</div>
+        </div>
+        <div id="console" class="console"></div>
+        <button id="runAll" class="btn-primary">▶ EJECUTAR TODAS</button>
+    </div>
+    <script>
+        'use strict';
+        const consoleDiv = document.getElementById('console');
+
+        // ---------- DEFINICIÓN DE FUNCIONES ----------
+        function test() {
+            addLog('🔵 test(): primera función en javascript', false);
+        }
+        function test1() {
+            addLog('🟢 test1(): parte de la función test', false);
+        }
+        function suma(a, b) {
+            const res = a + b;
+            addLog(`➕ suma(${a},${b}) = ${res}`, true);
+            return res;
+        }
+        function multiplica(a, b) {
+            const res = a * b;
+            addLog(`✖️ multiplica(${a},${b}) = ${res}`, true);
+            return res;
+        }
+        function saludo(nombre) {
+            const msg = `👋 Hola, ${nombre}!`;
+            addLog(msg, true);
+            return msg;
+        }
+
+        // ---------- LOGGER ----------
+        function addLog(message, isReturn = false) {
+            const entry = document.createElement('div');
+            entry.className = 'log-entry' + (isReturn ? ' log-return' : '');
+            entry.textContent = message;
+            consoleDiv.appendChild(entry);
+            consoleDiv.scrollTop = consoleDiv.scrollHeight;
+        }
+
+        // ---------- EJECUTAR FUNCIÓN POR NOMBRE ----------
+        function ejecutarFuncion(funcName) {
+            switch (funcName) {
+                case 'test': test(); break;
+                case 'test1': test1(); break;
+                case 'suma': suma(5, 3); break;
+                case 'multiplica': multiplica(4, 7); break;
+                case 'saludo': saludo('victor'); break;
+                default: break;
+            }
+        }
+
+        // ---------- EVENTOS ----------
+        document.querySelectorAll('.fn-btn').forEach(btn => {
+            btn.addEventListener('click', e => {
+                const fn = e.currentTarget.dataset.fn;
+                ejecutarFuncion(fn);
+            });
+        });
+
+        document.getElementById('runAll').addEventListener('click', () => {
+            consoleDiv.innerHTML = ''; // limpiar
+            addLog('🚀 EJECUTANDO TODAS LAS FUNCIONES...', false);
+            test1();
+            test();
+            suma(5, 3);
+            multiplica(4, 7);
+            saludo('Neon');
+            addLog('✅ Todas las funciones ejecutadas.', false);
+        });
+
+        // Ejecutar una demo al cargar
+        window.onload = () => {
+            addLog('✨ Haz clic en cualquier función o en "EJECUTAR TODAS".', false);
+        };
+    </script>
+</body>
+</html>

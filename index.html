@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio · JavaScript Neon</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;600;700;800;900&display=swap');
+        :root {
+            --bg: #0a0c16;
+            --surface: #111b26;
+            --neon-cyan: #00f0ff;
+            --neon-magenta: #ff44b0;
+            --neon-green: #a6ff6f;
+            --neon-yellow: #ffe600;
+            --neon-purple: #c77dff;
+            --glow-cyan: 0 0 15px #00f0ffaa;
+            --glow-magenta: 0 0 15px #ff44b0aa;
+            --glow-green: 0 0 15px #a6ff6faa;
+            --card-bg: rgba(18, 28, 40, 0.7);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at 80% 30%, #0f1722, #04070a);
+            min-height: 100vh;
+            padding: 2.5rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+            max-width: 800px;
+        }
+        .header h1 {
+            font-size: 3.2rem;
+            font-weight: 900;
+            background: linear-gradient(145deg, #fff, var(--neon-cyan));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 30px var(--neon-cyan);
+            letter-spacing: -0.02em;
+            margin-bottom: 0.8rem;
+        }
+        .header p {
+            font-size: 1.2rem;
+            color: #b0e0ff;
+            border-top: 1px solid var(--neon-cyan);
+            border-bottom: 1px solid var(--neon-cyan);
+            padding: 0.8rem 0;
+            box-shadow: 0 0 15px var(--neon-cyan) inset;
+            border-radius: 60px;
+            backdrop-filter: blur(4px);
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1300px;
+            width: 100%;
+        }
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 40px;
+            padding: 2rem 1.8rem;
+            transition: 0.25s;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 20px 30px rgba(0,0,0,0.6);
+            border-bottom: 4px solid transparent;
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 30%, rgba(0,255,255,0.1), transparent 70%);
+            opacity: 0;
+            transition: 0.3s;
+            pointer-events: none; /* ¡CLAVE! No interfiere con clics */
+        }
+        .card:hover {
+            transform: translateY(-12px);
+            border-bottom-color: var(--neon-cyan);
+            box-shadow: var(--glow-cyan), 0 25px 40px black;
+        }
+        .card:hover::before { opacity: 1; }
+        .card-icon {
+            font-size: 2.8rem;
+            margin-bottom: 1.2rem;
+            color: var(--neon-cyan);
+            text-shadow: 0 0 20px var(--neon-cyan);
+            position: relative;
+            z-index: 5;
+        }
+        .card h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            background: linear-gradient(145deg, #fff, #b0f0ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: relative;
+            z-index: 5;
+        }
+        .card p {
+            color: #c0d0e0;
+            margin-bottom: 1.8rem;
+            line-height: 1.5;
+            flex-grow: 1;
+            position: relative;
+            z-index: 5;
+        }
+        /* BOTÓN TIPO NEON - AHORA COMO BUTTON */
+        .btn-neon {
+            background: transparent;
+            border: 2px solid var(--neon-cyan);
+            color: var(--neon-cyan);
+            padding: 0.8rem 1.8rem;
+            border-radius: 60px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: 0.2s;
+            align-self: flex-start;
+            cursor: pointer;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            position: relative;
+            z-index: 20;
+            pointer-events: auto;
+            outline: none;
+            box-shadow: none;
+        }
+        .btn-neon:hover {
+            background: var(--neon-cyan);
+            color: black;
+            box-shadow: var(--glow-cyan);
+            border-color: white;
+        }
+        /* Colores neón individuales para cada tarjeta */
+        .card:nth-child(1) .card-icon { color: var(--neon-cyan); text-shadow: 0 0 20px var(--neon-cyan); }
+        .card:nth-child(1) .btn-neon { border-color: var(--neon-cyan); color: var(--neon-cyan); }
+        .card:nth-child(1):hover { border-bottom-color: var(--neon-cyan); box-shadow: var(--glow-cyan); }
+        .card:nth-child(1):hover .btn-neon { background: var(--neon-cyan); color: black; }
+
+        .card:nth-child(2) .card-icon { color: var(--neon-magenta); text-shadow: 0 0 20px var(--neon-magenta); }
+        .card:nth-child(2) .btn-neon { border-color: var(--neon-magenta); color: var(--neon-magenta); }
+        .card:nth-child(2):hover { border-bottom-color: var(--neon-magenta); box-shadow: var(--glow-magenta); }
+        .card:nth-child(2):hover .btn-neon { background: var(--neon-magenta); color: black; }
+
+        .card:nth-child(3) .card-icon { color: var(--neon-green); text-shadow: 0 0 20px var(--neon-green); }
+        .card:nth-child(3) .btn-neon { border-color: var(--neon-green); color: var(--neon-green); }
+        .card:nth-child(3):hover { border-bottom-color: var(--neon-green); box-shadow: var(--glow-green); }
+        .card:nth-child(3):hover .btn-neon { background: var(--neon-green); color: black; }
+
+        .card:nth-child(4) .card-icon { color: var(--neon-yellow); text-shadow: 0 0 20px var(--neon-yellow); }
+        .card:nth-child(4) .btn-neon { border-color: var(--neon-yellow); color: var(--neon-yellow); }
+        .card:nth-child(4):hover { border-bottom-color: var(--neon-yellow); box-shadow: 0 0 25px #ffe600aa; }
+        .card:nth-child(4):hover .btn-neon { background: var(--neon-yellow); color: black; }
+
+        .card:nth-child(5) .card-icon { color: var(--neon-purple); text-shadow: 0 0 20px var(--neon-purple); }
+        .card:nth-child(5) .btn-neon { border-color: var(--neon-purple); color: var(--neon-purple); }
+        .card:nth-child(5):hover { border-bottom-color: var(--neon-purple); box-shadow: 0 0 25px #c77dffaa; }
+        .card:nth-child(5):hover .btn-neon { background: var(--neon-purple); color: black; }
+
+        .card:nth-child(6) .card-icon { color: #ff6b6b; text-shadow: 0 0 20px #ff6b6b; }
+        .card:nth-child(6) .btn-neon { border-color: #ff6b6b; color: #ff6b6b; }
+        .card:nth-child(6):hover { border-bottom-color: #ff6b6b; box-shadow: 0 0 25px #ff6b6baa; }
+        .card:nth-child(6):hover .btn-neon { background: #ff6b6b; color: black; }
+
+        .card:nth-child(7) .card-icon { color: #6bc9ff; text-shadow: 0 0 20px #6bc9ff; }
+        .card:nth-child(7) .btn-neon { border-color: #6bc9ff; color: #6bc9ff; }
+        .card:nth-child(7):hover { border-bottom-color: #6bc9ff; box-shadow: 0 0 25px #6bc9ffaa; }
+        .card:nth-child(7):hover .btn-neon { background: #6bc9ff; color: black; }
+
+        .card:nth-child(8) .card-icon { color: #ff9f4b; text-shadow: 0 0 20px #ff9f4b; }
+        .card:nth-child(8) .btn-neon { border-color: #ff9f4b; color: #ff9f4b; }
+        .card:nth-child(8):hover { border-bottom-color: #ff9f4b; box-shadow: 0 0 25px #ff9f4baa; }
+        .card:nth-child(8):hover .btn-neon { background: #ff9f4b; color: black; }
+
+        .card:nth-child(9) .card-icon { color: #b983ff; text-shadow: 0 0 20px #b983ff; }
+        .card:nth-child(9) .btn-neon { border-color: #b983ff; color: #b983ff; }
+        .card:nth-child(9):hover { border-bottom-color: #b983ff; box-shadow: 0 0 25px #b983ffaa; }
+        .card:nth-child(9):hover .btn-neon { background: #b983ff; color: black; }
+
+        .footer {
+            margin-top: 4rem;
+            color: #90a0b0;
+            font-size: 0.95rem;
+            border-top: 1px solid #2a4050;
+            padding-top: 1.8rem;
+            width: 100%;
+            text-align: center;
+        }
+        @media (max-width: 600px) {
+            .header h1 { font-size: 2.3rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1><i class="fas fa-code"></i> PORTAFOLIO JAVASCRIPT</h1>
+        <p>✨ 9 ejercicios con estilo Neon Dark · ES6+ · Interactivos</p>
+    </div>
+    <div class="grid">
+        <!-- Tarjeta 1 -->
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-calculator"></i></div>
+            <h2>Ejercicio 1</h2>
+            <p>Precio con IVA · Calculadora interactiva con sliders neon.</p>
+            <button class="btn-neon" onclick="window.open('./ejercicio1.html', '_blank')"><i class="fas fa-play"></i> Ver ejercicio</button>
+        </div>
+        <!-- Tarjeta 2 -->
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-times"></i></div>
+            <h2>Ejercicio 2</h2>
+            <p>Multiplicación instantánea · Diseño glitch neon.</p>
+            <button class="btn-neon" onclick="window.open('./ejercicio2.html', '_blank')"><i class="fas fa-play"></i> Ver ejercicio</button>
+        </div>
+        <!-- Tarjeta 3 -->
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-list"></i></div>
+            <h2>Ejercicio 3</h2>
+            <p>Lista tecnológica · Dispositivos con efectos hover.</p>
+            <button class="btn-neon" onclick="window.open('./ejercicio3.html', '_blank')"><i class="fas fa-play"></i> Ver ejercicio</button>
+        </div>
+        <!-- Tarjeta 4 -->
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-glass-cheers"></i></div>
+            <h2>Ejercicio 4</h2>
+            <p>Confetti de bienvenida · Canvas + animación de partículas.</p>
+            <button class="btn-neon" onclick="window.open('./ejercicio4.html', '_blank')"><i class="fas fa-play"></i> Ver ejercicio</button>
+        </div>
+        <!-- Tarjeta 5 -->
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-redo-alt"></i></div>
+            <h2>Ejercicio 5</h2>
+            <p>Bucles animados · Explicaciones interactivas + slider.</p>
+            <button class="btn-neon" onclick="window.open('./ejercicio5.html', '_blank')"><i class="fas fa-play"></i> Ver ejercicio</button>
+        </div>
+        <!-- Tarjeta 6 -->
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-microchip"></i></div>
+            <h2>Ejercicio 6</h2>
+            <p>Llamadas a funciones · Botones interactivos y consola.</p>
+            <button class="btn-neon" onclick="window.open('./ejercicio6.html', '_blank')"><i class="fas fa-play"></i> Ver ejercicio</button>
+        </div>
+        <!-- Tarjeta 7 -->
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-font"></i></div>
+            <h2>Ejercicio 7</h2>
+            <p>String & Number Lab · Operaciones combinadas.</p>
+            <button class="btn-neon" onclick="window.open('./ejercicio7.html', '_blank')"><i class="fas fa-play"></i> Ver ejercicio</button>
+        </div>
+        <!-- Tarjeta 8 -->
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-dice"></i></div>
+            <h2>Ejercicio 8</h2>
+            <p>Número sorpresa · Generador aleatorio con slider.</p>
+            <button class="btn-neon" onclick="window.open('./ejercicio8.html', '_blank')"><i class="fas fa-play"></i> Ver ejercicio</button>
+        </div>
+        <!-- Tarjeta 9 -->
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-mask"></i></div>
+            <h2>Ejercicio 9</h2>
+            <p>Selector de Héroes · Imágenes, stats y fondo dinámico.</p>
+            <button class="btn-neon" onclick="window.open('./ejercicio9.html', '_blank')"><i class="fas fa-play"></i> Ver ejercicio</button>
+        </div>
+    </div>
+    <div class="footer">
+        <i class="fas fa-bolt" style="color: var(--neon-cyan);"></i> Portafolio JavaScript · Estilo Neon Dark <i class="fas fa-bolt" style="color: var(--neon-magenta);"></i>
+    </div>
+
+    <!-- Fallback si los botones no funcionan (opcional) -->
+    <script>
+        // Asegurar que los botones sean clickeables incluso si el onclick falla
+        document.querySelectorAll('.btn-neon').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation(); // evitar que el evento suba al card
+            });
+        });
+    </script>
+</body>
+</html>
