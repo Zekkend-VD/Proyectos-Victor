@@ -1,0 +1,6 @@
+juan|$2y$10$sbMB/.cdsXb/rT4Q2kIWgOutZdrAtPVzEU2gEqJqdczXhrUlnnnjm|juan|masculino|ingles|2025-10-30 21:13:30
+david|$2y$10$swaCUR4H52lNCZFOCZpCIeZYQVAg4edcQw5yt/uoebCZ3TCsmRDCy|David|masculino|mecanica|2025-10-27 21:34:36
+jesus|$2y$10$2Qjc10Rrxorg8N3BvlrM.OJlFwL4W54jJCWUcmmAi6pmumbt4ZgU6|jesus|masculino|informatica|2025-10-28 17:42:15
+marcos|$2y$10$tC87TUEoK8Nh9KRnOhEp4uydRp.KYsI3Qes4OzFsq18WTPz10os5O|marcos|femenino|ciencias|2025-10-28 18:09:16
+roberto|$2y$10$qW5weOh.fUyh70SLxU1EvuwpZDfkqBzqZhlcFiPFQgSonQLjC4aIa|roberto|masculino|matematicas|2025-10-28 18:27:38
+yeilyn|$2y$10$bslKAsDyqB9YtssBWjzYEufkKFoEJhSeEXzQ8jv0Un/KeipZugpTe|yeilyn|femenino|telecomunicaciones |2025-10-30 21:15:54

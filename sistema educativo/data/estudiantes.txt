@@ -1,0 +1,4 @@
+paola|$2y$10$SAcpVnDRvpDdErXXA.gh2e.jVs2vgAnfhH7SpgxK6C1/WDr9PCxZa|paola |otro|2025-10-27 21:40:28
+abraham|$2y$10$0C8Le8S9oNp0Mt3DOeWBG.ReyFdulOk/JtBiD/1O6tj2lgmLG9DA6|abraham|femenino|2025-10-28 18:16:37
+daniela|$2y$10$HKMrd2E3Nwq3PTXa7C.v3e.NXZGbHDR6q9/Xw6iNdd/AJ5hErR6Vm|daniela|femenino|2025-10-30 21:14:38
+cristiam|$2y$10$qMbDnm4w8eS9K2J1KXxH8e/NLuK/0yHi9Hs724JOe8wbNDONMkaw.|cristiam|femenino|2025-10-30 21:19:32

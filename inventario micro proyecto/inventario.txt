@@ -1,0 +1,4 @@
+101|Laptop XYZ|Potente laptop de 15 pulgadas|999.99|109
+102|Mouse Inalámbrico|Mouse ergonómico para oficina|25.50|45
+103|Teclado Mecánico|Teclado con switches táctiles|75.00|17
+104|NVIDIA GeForce RTX 3090|tarjeta de video potente|2500|49

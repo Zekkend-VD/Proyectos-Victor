@@ -1,0 +1,3 @@
+david|motores de carros|/tareas.txt |2025-10-31|2025-10-27 21:39:59
+roberto|multiplicacion|multiplicacion de tres cifras |2025-11-08|2025-10-28 18:28:39
+yeilyn|Configuración y gestión de redes|Diseñar y poner en marcha redes de área local (LAN) y de área amplia (WAN), supervisar el tráfico, y optimizar el rendimiento de la red para garantizar la estabilidad y disponibilidad del servicio.|2025-11-07|2025-10-30 21:17:09

@@ -1,0 +1,16 @@
+perfume001|Chanel No. 5|Eau de Parfum|149.99|24|perfume001.jpg
+perfume002|Dior Sauvage|Eau de Toilette|89.99|26|perfume002.jpg
+perfume003|Tom Ford Black Orchid|Parfum|295|16|perfume003.webp
+perfume004|Versace Bright Crystal|Eau de Toilette|65.99|29|perfume004.webp
+perfume005|Creed Aventus|Eau de Parfum|425|24|perfume005.webp
+perfume006|Yves Saint Laurent Black Opium|Eau de Parfum|98.5|20|perfume006.webp
+perfume007|Dolce & Gabbana Light Blue|Eau de Toilette|72.99|34|perfume007.jpg
+perfume008|Gucci Bloom|Eau de Parfum|115|15|perfume008.jpg
+perfume009|Calvin Klein CK One|Unisex|45.99|39|perfume009.jpg
+perfume010|Armani Acqua di Gio|Hombre|78.99|28|perfume010.jpg
+perfume011|Lancôme La Vie Est Belle|Mujer|105.99|19|perfume011.jpg
+perfume012|Paco Rabanne 1 Million|Hombre|86.5|24|perfume012.webp
+perfume013|Bulgari Omnia Crystalline|Eau Fraiche|92.99|16|perfume013.jpg
+perfume014|Hermès Terre d'Hermès|Eau de Toilette|125|20|perfume014.jpg
+perfume015|Marc Jacobs Daisy|Eau de Toilette|68.99|32|perfume015.jpg
+perfume5747|Ultra Male Jean Paul Gaultier|Hombre|60|25|perfume5747.jpg

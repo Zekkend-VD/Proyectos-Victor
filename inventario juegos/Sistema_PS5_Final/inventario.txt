@@ -1,0 +1,10 @@
+101|Spider-Man 2|Aventura de superhéroes en Nueva York|69.99|15|no_image.png
+102|God of War Ragnarok|Acción épica y mitología nórdica|59.99|10|no_image.png
+103|Elden Ring|RPG de mundo abierto desafiante|49.99|20|no_image.png
+104|Demon's Souls Remake|Clásico de rol con dificultad extrema|29.99|5|no_image.png
+105|Hogwarts Legacy|Aventura en el mundo mágico de Harry Potter|39.99|30|no_image.png
+106|The Last of Us Part I|Supervivencia post-apocalíptica remasterizada|39.99|8|no_image.png
+107|Horizon Forbidden West|Aventura en un mundo post-apocalíptico|49.99|12|no_image.png
+108|Gran Turismo 7|Simulador de carreras ultra realista|59.99|25|no_image.png
+109|FIFA 24|El mejor simulador de fútbol|59.99|18|no_image.png
+110|Call of Duty Modern Warfare III|Shooter militar en primera persona|69.99|22|no_image.png

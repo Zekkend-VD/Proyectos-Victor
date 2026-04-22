@@ -1,0 +1,348 @@
+/* Definición de Variables CSS para un Modo Oscuro Vibrante */
+:root {
+    --color-bg-primary: #1a1a2e;       /* Fondo principal oscuro (azul marino casi negro) */
+    --color-bg-secondary: #16213e;     /* Fondo de contenedores y tarjetas (azul oscuro) */
+    --color-text-primary: #e0e0e0;     /* Texto claro principal */
+    --color-text-secondary: #a0a0a0;   /* Texto secundario y etiquetas */
+    --color-accent-main: #e94560;      /* Color de acento principal (Rosa-Rojo vibrante) */
+    --color-accent-light: #533483;     /* Color de acento secundario (Púrpura) */
+    --color-border: #33334d;           /* Bordes y separadores */
+    --color-success: #4CAF50;          /* Verde para éxito */
+    --color-error: #f44336;            /* Rojo para error */
+    --transition-duration: 0.3s;
+}
+
+/* --- General & Tipografía --- */
+body {
+    font-family: 'Poppins', sans-serif; /* Fuente moderna, si está disponible */
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    margin: 0;
+    padding: 30px;
+    line-height: 1.6;
+    transition: background-color var(--transition-duration) ease;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--color-bg-secondary);
+    padding: 30px;
+    border-radius: 15px; /* Bordes más redondeados */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6); /* Sombra profunda */
+    transition: background-color var(--transition-duration) ease;
+}
+
+h1 {
+    color: var(--color-accent-main);
+    border-bottom: 2px solid var(--color-accent-main);
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    font-weight: 600; /* Más peso para los títulos */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); /* Sombra de texto sutil */
+}
+
+h2 {
+    color: var(--color-text-primary);
+    margin-top: 35px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: var(--color-border);
+    margin: 40px 0;
+}
+
+/* --- Formularios y Campos de Entrada --- */
+form {
+    background: var(--color-bg-secondary);
+    padding: 25px;
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    margin-bottom: 30px;
+    transition: box-shadow var(--transition-duration) ease;
+}
+
+form:hover {
+    box-shadow: 0 0 20px rgba(233, 69, 96, 0.3); /* Resplandor más intenso con color principal */
+}
+
+input[type="text"], 
+input[type="password"], 
+input[type="email"], 
+input[type="number"], 
+textarea,
+input[type="file"] { /* Estilo para input de tipo file */
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 18px 0; /* Más espacio inferior */
+    background-color: var(--color-bg-primary);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-primary);
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: border-color var(--transition-duration), box-shadow var(--transition-duration);
+}
+
+input:focus, textarea:focus, input[type="file"]:focus {
+    border-color: var(--color-accent-main);
+    box-shadow: 0 0 0 0.2rem rgba(233, 69, 96, 0.35); /* Resplandor de foco más visible */
+    outline: none;
+}
+
+label {
+    font-weight: 600;
+    display: block;
+    margin-top: 15px; /* Más espacio superior */
+    color: var(--color-text-secondary);
+}
+
+/* --- Botones --- */
+input[type="submit"], .btn {
+    background-color: var(--color-accent-main);
+    color: white; /* Texto blanco en botón de acento */
+    padding: 14px 30px; /* Más padding */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 17px;
+    font-weight: 600;
+    transition: background-color var(--transition-duration) ease, transform 0.2s ease, box-shadow 0.2s ease;
+    margin-right: 15px; /* Más espacio entre botones */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Sombra para efecto 3D */
+    letter-spacing: 0.5px; /* Espaciado de letras */
+}
+
+input[type="submit"]:hover, .btn:hover {
+    background-color: #d83e5a; /* Tono de acento más oscuro */
+    transform: translateY(-3px); /* Efecto de elevación pronunciado */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6);
+}
+
+.logout-btn {
+    float: right;
+    background-color: var(--color-accent-light); /* Púrpura para botón de salir */
+}
+
+.logout-btn:hover {
+    background-color: #4a2f72;
+}
+
+/* --- Tablas (Datos) --- */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 25px;
+    background-color: var(--color-bg-secondary);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 15px 20px; /* Más padding en celdas */
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+    vertical-align: middle;
+}
+
+th {
+    background-color: var(--color-accent-light); /* Púrpura para encabezado de tabla */
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+tbody tr {
+    transition: background-color var(--transition-duration) ease;
+}
+
+tbody tr:hover {
+    background-color: #2a3350; /* Cambio sutil en hover */
+}
+
+/* --- Diseño Responsivo de Tarjetas de Producto/Inventario (Grid) --- */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Min-width ajustado */
+    gap: 25px; /* Más espacio entre tarjetas */
+    margin-top: 25px;
+}
+
+.product-card {
+    background-color: var(--color-bg-secondary);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden; /* Para las imágenes */
+}
+
+.product-card:hover {
+    transform: translateY(-8px); /* Elevación más notoria */
+    box-shadow: 0 12px 25px rgba(233, 69, 96, 0.25); /* Resplandor del acento */
+}
+
+.product-card img {
+    max-width: 100%;
+    height: 180px; /* Altura fija para las imágenes */
+    object-fit: cover; /* Ajustar imagen cubriendo el espacio */
+    border-radius: 8px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.03); /* Zoom sutil en la imagen */
+}
+
+.product-card h3 {
+    color: var(--color-accent-main);
+    margin-top: 0;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.product-card p {
+    color: var(--color-text-secondary);
+    margin: 8px 0;
+}
+
+.product-card .price {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-top: 15px;
+}
+
+/* --- Mensajes y Feedback --- */
+.success, .error {
+    padding: 18px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.success {
+    background-color: rgba(76, 175, 80, 0.2);
+    color: var(--color-success);
+    border: 1px solid var(--color-success);
+}
+
+.error {
+    background-color: rgba(244, 67, 54, 0.2);
+    color: var(--color-error);
+    border: 1px solid var(--color-error);
+}
+
+/* --- Animaciones CSS --- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Estilo para enlaces */
+p a {
+    color: var(--color-accent-main);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-duration) ease;
+}
+
+p a:hover {
+    color: #d83e5a;
+    text-decoration: underline;
+}
+
+/* --- Media Queries para Responsividad --- */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    .container {
+        padding: 25px;
+    }
+    .product-grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+    h1 {
+        font-size: 2em;
+    }
+    input[type="submit"], .btn {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .logout-btn {
+        float: none;
+        display: block;
+        margin-bottom: 20px;
+    }
+}
+/* --- Nuevas Clases de Layout para Administrador --- */
+
+/* Contenedor principal del Admin (Grid de 2 columnas) */
+.admin-main-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Columna de acciones pequeña, columna de datos grande */
+    gap: 30px;
+}
+
+.col-actions {
+    /* Mantiene las tarjetas pegadas */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.form-card, .data-view-card {
+    background: var(--color-bg-secondary);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--color-border);
+}
+
+.header-main {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: 20px;
+}
+
+.header-main h1 {
+    margin: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+.header-main p {
+    color: var(--color-accent-main);
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+/* Tablas dentro de tarjetas de datos */
+.table-container {
+    overflow-x: auto; /* Permite desplazamiento en tablas grandes */
+}
+
+/* Responsividad para el Admin */
+@media (max-width: 1024px) {
+    .admin-main-grid {
+        grid-template-columns: 1fr; /* Una sola columna en tabletas y móviles */
+    }
+}

@@ -1,0 +1,5 @@
+101|Spider-Man 2|Aventura de superhéroes en Nueva York|69.99|15
+102|God of War Ragnarok|Acción épica y mitología nórdica|59.99|10
+103|Elden Ring|RPG de mundo abierto desafiante|49.99|20
+104|Demon's Souls Remake|Clásico de rol con dificultad extrema|29.99|5
+105|Hogwarts Legacy|Aventura en el mundo mágico de Harry Potter|39.99|30

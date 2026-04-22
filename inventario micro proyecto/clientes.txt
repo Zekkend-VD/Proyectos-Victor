@@ -1,0 +1,5 @@
+2|Cliente Prueba|cliente@mail.com|cliente_password|cliente3|Victor Ortega|victordanielortega1@gmail.com|victor123|cliente
+3|Victor Ortega|victordanielortega1@gmail.com|victor1234|cliente
+4|miguel |miguel123@gmail.com|miguel1234|cliente
+5|gerardo|gerardo123@gmail.com|gerardo123|cliente
+6|cristiam|cristiam123@gmail.com|cristiam123|cliente

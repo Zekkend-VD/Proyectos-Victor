@@ -1,0 +1,261 @@
+/* Definición de Variables CSS para Dark Mode */
+:root {
+    --color-bg-primary: #1e1e1e;       /* Fondo principal oscuro */
+    --color-bg-secondary: #252526;     /* Fondo de contenedores y tarjetas */
+    --color-text-primary: #f0f0f0;     /* Texto claro principal */
+    --color-text-secondary: #aaaaaa;   /* Texto secundario y etiquetas */
+    --color-accent: #00bcd4;           /* Color de acento (Cian vibrante) */
+    --color-border: #333333;           /* Bordes y separadores */
+    --color-success: #28a745;          /* Verde para éxito */
+    --color-error: #dc3545;            /* Rojo para error */
+    --transition-duration: 0.3s;
+}
+
+/* --- General & Tipografía --- */
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    margin: 0;
+    padding: 30px;
+    line-height: 1.6;
+    transition: background-color var(--transition-duration) ease;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--color-bg-secondary);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5); /* Sombra oscura para contraste */
+    transition: background-color var(--transition-duration) ease;
+}
+
+h1 {
+    color: var(--color-accent);
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+h2 {
+    color: var(--color-text-primary);
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: var(--color-border);
+    margin: 30px 0;
+}
+
+/* --- Formularios y Campos de Entrada --- */
+form {
+    background: var(--color-bg-secondary);
+    padding: 20px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    margin-bottom: 25px;
+    transition: box-shadow var(--transition-duration) ease;
+}
+
+form:hover {
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.2); /* Resplandor sutil con color de acento */
+}
+
+input[type="text"], 
+input[type="password"], 
+input[type="email"], 
+input[type="number"], 
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 15px 0;
+    background-color: var(--color-bg-primary);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-primary);
+    border-radius: 6px;
+    box-sizing: border-box;
+    transition: border-color var(--transition-duration), box-shadow var(--transition-duration);
+}
+
+input:focus, textarea:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 0.2rem rgba(0, 188, 212, 0.25);
+    outline: none;
+}
+
+label {
+    font-weight: 600;
+    display: block;
+    margin-top: 10px;
+    color: var(--color-text-secondary);
+}
+
+/* --- Botones --- */
+input[type="submit"], .btn {
+    background-color: var(--color-accent);
+    color: var(--color-bg-primary); /* Texto oscuro en botón de acento */
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color var(--transition-duration) ease, transform 0.1s ease;
+    margin-right: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+input[type="submit"]:hover, .btn:hover {
+    background-color: #00a4b8; /* Tono de acento más oscuro */
+    transform: translateY(-2px); /* Efecto de elevación */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.logout-btn {
+    float: right;
+    background-color: var(--color-border);
+    color: var(--color-text-primary);
+}
+
+.logout-btn:hover {
+    background-color: #444444;
+}
+
+/* --- Tablas (Datos) --- */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 20px;
+    background-color: var(--color-bg-secondary);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+    vertical-align: middle;
+}
+
+th {
+    background-color: #00a4b8; /* Tono de acento ligeramente más oscuro para el encabezado */
+    color: var(--color-bg-primary);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+tbody tr {
+    transition: background-color var(--transition-duration) ease;
+}
+
+tbody tr:hover {
+    background-color: #2e2e2e; /* Cambio sutil en hover */
+}
+
+/* --- Diseño Responsivo de Tarjetas de Producto/Inventario (Grid) --- */
+/* Esta sección es ideal para el panel del cliente o la vista de inventario */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 300px min width por tarjeta */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.product-card {
+    background-color: var(--color-bg-secondary);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Pequeña elevación */
+    box-shadow: 0 8px 15px rgba(0, 188, 212, 0.15); /* Resplandor del acento */
+}
+
+.product-card h3 {
+    color: var(--color-accent);
+    margin-top: 0;
+    font-size: 1.4em;
+}
+
+.product-card p {
+    color: var(--color-text-secondary);
+    margin: 5px 0;
+}
+
+.product-card .price {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-top: 10px;
+}
+
+/* --- Mensajes y Feedback --- */
+.success, .error {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.success {
+    background-color: rgba(40, 167, 69, 0.2); /* Fondo sutil de éxito */
+    color: var(--color-success);
+    border: 1px solid var(--color-success);
+}
+
+.error {
+    background-color: rgba(220, 53, 69, 0.2); /* Fondo sutil de error */
+    color: var(--color-error);
+    border: 1px solid var(--color-error);
+}
+
+/* --- Animaciones CSS --- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Estilo para enlaces */
+p a {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-duration) ease;
+}
+
+p a:hover {
+    color: #00a4b8;
+    text-decoration: underline;
+}
+
+/* --- Media Queries para Responsividad --- */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    .container {
+        padding: 20px;
+    }
+    /* Las columnas del grid se adaptarán automáticamente por el auto-fit */
+}

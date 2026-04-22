@@ -1,0 +1,10 @@
+101|Spider-Man 2|Aventura de superhéroes en Nueva York|69.99|15|dcu623d-8e66eb73-81d8-4549-aa50-6ca9a4ad86c5.jpg
+102|God of War Ragnarok|Acción épica y mitología nórdica|59.99|10|dcu623d-8e66eb73-81d8-4549-aa50-6ca9a4ad86c5.jpg
+103|Elden Ring|RPG de mundo abierto desafiante|49.99|20|dcu623d-8e66eb73-81d8-4549-aa50-6ca9a4ad86c5.jpg
+104|Demon's Souls Remake|Clásico de rol con dificultad extrema|29.99|5|dcu623d-8e66eb73-81d8-4549-aa50-6ca9a4ad86c5.jpg
+105|Hogwarts Legacy|Aventura en el mundo mágico de Harry Potter|39.99|30|dcu623d-8e66eb73-81d8-4549-aa50-6ca9a4ad86c5.jpg
+106|The Last of Us Part I|Supervivencia post-apocalíptica remasterizada|39.99|8|dcu623d-8e66eb73-81d8-4549-aa50-6ca9a4ad86c5.jpg
+107|Horizon Forbidden West|Aventura en un mundo post-apocalíptico|49.99|12|dcu623d-8e66eb73-81d8-4549-aa50-6ca9a4ad86c5.jpg
+108|Gran Turismo 7|Simulador de carreras ultra realista|59.99|25|dcu623d-8e66eb73-81d8-4549-aa50-6ca9a4ad86c5.jpg
+109|FIFA 24|El mejor simulador de fútbol|59.99|18|dcu623d-8e66eb73-81d8-4549-aa50-6ca9a4ad86c5.jpg
+110|Call of Duty Modern Warfare III|Shooter militar en primera persona|69.99|21|dcu623d-8e66eb73-81d8-4549-aa50-6ca9a4ad86c5.jpg

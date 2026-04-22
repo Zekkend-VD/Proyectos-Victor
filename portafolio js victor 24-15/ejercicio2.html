@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2 · Calculadora Neon</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;600;800&display=swap');
+        :root {
+            --bg: #0b0d10;
+            --surface: #12181f;
+            --neon-pink: #ff44b0;
+            --neon-green: #a6ff6f;
+            --neon-yellow: #ffe600;
+            --glow-pink: 0 0 12px #ff44b0aa;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at 30% 50%, #1a1520, #0a070c);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--neon-pink);
+            box-shadow: var(--glow-pink), 0 20px 40px #000;
+            border-radius: 48px;
+            padding: 2.8rem 2.2rem;
+            max-width: 550px;
+            width: 100%;
+            backdrop-filter: blur(8px);
+            transition: 0.3s;
+        }
+        .card:hover { border-color: var(--neon-yellow); box-shadow: 0 0 25px #ffe600aa; }
+        h2 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            background: linear-gradient(145deg, #fff, var(--neon-pink));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 2.2rem;
+            text-shadow: 0 0 10px var(--neon-pink);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .calc-panel {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .num-input {
+            background: #1c2632;
+            border: 2px solid #2e3c4a;
+            border-radius: 40px;
+            padding: 1rem 1.2rem;
+            width: 120px;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: white;
+            text-align: center;
+            transition: 0.2s;
+        }
+        .num-input:focus {
+            border-color: var(--neon-green);
+            box-shadow: 0 0 20px var(--neon-green);
+            outline: none;
+        }
+        .operator {
+            font-size: 2.8rem;
+            color: var(--neon-yellow);
+            text-shadow: 0 0 12px var(--neon-yellow);
+            font-weight: 800;
+        }
+        .result-box {
+            background: #0d1219;
+            border-radius: 60px;
+            padding: 1.4rem 1.8rem;
+            margin-top: 2rem;
+            border: 1px solid var(--neon-green);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .result-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--neon-green);
+            text-shadow: 0 0 15px var(--neon-green);
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2> MULTIPLICACION</h2>
+        <div class="calc-panel">
+            <input type="number" id="num1" class="num-input" value="120" step="any">
+            <span class="operator">×</span>
+            <input type="number" id="num2" class="num-input" value="140" step="any">
+        </div>
+        <div class="result-box">
+            <span style="color: #b0e0ff; font-weight: 600;">RESULTADO</span>
+            <span id="product" class="result-number">16800</span>
+        </div>
+    </div>
+    <script>
+        'use strict';
+        const n1 = document.getElementById('num1');
+        const n2 = document.getElementById('num2');
+        const prod = document.getElementById('product');
+
+        const updateProduct = () => {
+            const a = parseFloat(n1.value) || 0;
+            const b = parseFloat(n2.value) || 0;
+            prod.textContent = a * b;
+        };
+        n1.addEventListener('input', updateProduct);
+        n2.addEventListener('input', updateProduct);
+        updateProduct();
+    </script>
+</body>
+</html>

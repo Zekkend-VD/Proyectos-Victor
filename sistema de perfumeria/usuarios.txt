@@ -1,0 +1,4 @@
+cliente@test.com|$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi|cliente
+admin@test.com|$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi|clientevictor@gmail.com|$2y$10$cBEeKOJY/SsnvY0xrhy.TuCMfDWBvchT5L9WKgqmJp9rWtT1iknAC|cliente
+victor@gmail.com|$2y$10$xRX15i5UfHyFYbMia/KGBebZlpZT65X1u2kDacrK1Hmi7yXKHoZvS|cliente
+bea@gmail.com|$2y$10$XIM6AsnYWC7yg7rjHhleaO4VSkkYdn0bW4UEHs9G2FDgZEWA/fqvS|cliente
