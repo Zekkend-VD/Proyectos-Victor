@@ -1,4 +1,0 @@
-2|Cliente Prueba|cliente@mail.com|cliente_password|cliente
-3|María García|maria@gmail.com|123456|cliente
-4|Juan Pérez|juan@hotmail.com|password|cliente
-5|Ana López|ana@yahoo.com|mipass123|cliente

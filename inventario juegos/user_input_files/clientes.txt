@@ -1,2 +1,0 @@
-2|Cliente Prueba|cliente@mail.com|cliente_password|cliente3|Victor Ortega|victordanielortega1@gmail.com|victor123|cliente
-3|Victor Ortega|victordanielortega1@gmail.com|victor123|cliente
